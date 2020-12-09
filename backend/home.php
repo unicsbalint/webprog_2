@@ -6,6 +6,7 @@
     </div>
 <?php endif; ?>
 
+<?php if (!IsUserLoggedIn()): ?>
 <div class="box">
 <h1>Hello there!</h1>
 <p> This is the hand-in project for Webprogramming 2 subject,
@@ -18,5 +19,5 @@ available for registered useres.</p>
 <h3>password: admin123<h3>
 </p>
 </div>
-
+<?php endif; ?>
 

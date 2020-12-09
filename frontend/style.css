@@ -26,8 +26,8 @@ nav{
     height: 100%; 
 }
 footer{
-    margin-top:10px;
-    background-color: rgba(20, 20, 20, 0.582);
+    margin-top:30px;
+    background-color: rgba(117, 90, 0, 0.582);
     color: whitesmoke;
     position: fixed;
     bottom: 0;
@@ -115,6 +115,7 @@ nav {
     text-shadow: 1px 1px black;
     color: white;
     margin-top: 2%;
+    margin-bottom: 2%;
 }
 .box a{
     text-decoration: none;
@@ -139,4 +140,19 @@ nav {
     text-decoration: none;
     color: rgb(6, 76, 99);
     font-weight: bold;
+}
+.privateBox{
+    width: 30%;
+    margin: auto;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 50px;
+    background-color: rgb(31, 30, 30);
+    text-shadow: 1px 1px black;
+    color: white;
+    margin-top: 2%;
+    justify-content: center;
+    margin-bottom: 2%;
 }

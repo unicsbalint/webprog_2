@@ -1,8 +1,8 @@
 <div class="regContainer">
 <form class="login_form" method="post">   
-        <label for="userEmail">E-mail</label>
+        <label for="userEmail"><b>E-mail</b></label>
         <input type="email" name="userEmail" id="userEmail" placeholder="Email" class="regElements"> 
-        <label for="userPassword">Password</label>
+        <label for="userPassword"><b>Password</b></label>
         <input type="password" name="userPassword" id="userPassword" placeholder="Password" value="" class="regElements">        
         <input type="submit" name="loginSubmit" value="Login" class="regButton">
 </form>

@@ -15,7 +15,7 @@ if (empty($_GET['p']))
 
 <?php if (IsUserLoggedIn()): ?>
     <div class="navbutton" <?=$_GET['p']=='private'?"active":""?>>
-    <a href="index.php?p=private"><i class="fa fa-envelope-open-o"></i> Private</a>
+    <a href="index.php?p=private"><i class="fa fa-star"></i></i> Private</a>
 </div>
 <?php endif; ?>
 
@@ -23,13 +23,23 @@ if (empty($_GET['p']))
 <?php if (!IsUserLoggedIn()): ?>
         <a href="index.php?p=login">
     <div>
-        <i class="fa fa-user-circle-o"></i> Log in
+    <i class="fa fa-sign-in"></i> Log in
     </div>
-    </a>
+    </a>    
     <?php else: ?>        
             <div class="navbutton"><a href="index.php?p=logout"><i class="fa fa-power-off"></i> Log out</a></div>
     <?php endif; ?>
 </div>
+<?php if (!IsUserLoggedIn()): ?>
+<div class="navbutton">
+<a href="index.php?p=register">
+    <div>
+    <i class="fa fa-user-plus"></i> Register
+    </div>
+    </a>   
+
+</div>
+<?php endif; ?>
 <?php if (IsUserLoggedIn()): ?>
 <div class="navbutton">
         <div><i class="fa fa-user-circle-o"></i> <?=$_SESSION['name']; ?></div>
