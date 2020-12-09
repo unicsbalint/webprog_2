@@ -9,6 +9,7 @@ switch ($_GET['p'])
     case 'about_me': require_once 'backend/about_me.php'; break;
     case 'contact': require_once 'backend/contact.php'; break;
     case 'login': require_once 'backend/user_management/login.php'; break;
-    case 'register': require_once 'backend/user_management/register.php'; break;  
+    case 'register': require_once 'backend/user_management/register.php'; break; 
+    case 'logout': IsUserLoggedIn() ? UserLogout() : header('Location: index.php'); break; 
 }
 ?>

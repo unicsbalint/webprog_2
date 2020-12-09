@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once 'backend/user_management/userManager.php';
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

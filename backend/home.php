@@ -1,1 +1,2 @@
-<div class="home">home </div>
+   Üdvözlünk
+<?php echo $_SESSION['name']?>
