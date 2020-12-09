@@ -1,4 +1,1 @@
-<?php
-echo "footer"
-
-?>
+Name: Cserneczky Bálint Neptun code: QPS1MZ 
