@@ -23,7 +23,6 @@ function UserLogin($email, $password) {
         $_SESSION['email'] = $record['email'];
  
         header('Location: index.php');
-        echo "true";
     }
     return false;
 }
