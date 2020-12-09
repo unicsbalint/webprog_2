@@ -17,9 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['loginSubmit'])) {
   ];
 
   if (empty($postData['email']) || empty($postData['password'])) {
-    echo "<script>alert('Hiányzó adatok!');</script>";
+    echo "<script>alert('Missing details!');</script>";
   } else if (!UserLogin($postData['email'], $postData['password'])) {
-    echo "<script>alert('Hibás felhasználónév vagy jelszó!');</script>";
+    echo "<script>alert('Wrong user details!');</script>";
   }
 
   $postData['password'] = "";
