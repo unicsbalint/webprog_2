@@ -159,3 +159,60 @@ $oil = getList($query, $params);
 <?php endforeach; ?>
 </table>
 </div>
+
+<div class="privateBox">
+<h1>CRUD for car_color db:</h1>
+<form action="backend/add_color.php" method="POST">
+  <label for="brand">Brand:</label><br>
+  <input class="crudInput" type="text" id="brand" name="brand"><br>
+  <label for="type">Basic color name:</label><br>
+  <input class="crudInput" type="text" id="color_name" name="color_name"><br>
+  <label for="type">Color code:</label><br>
+  <input class="crudInput" type="text" id="color_code" name="color_code"><br>
+  <input class="crudButton" type="submit" value="ADD BRAND SPECIFIC COLOR">
+</form>
+<form action="backend/delete_color.php" method="POST">
+  <label for="oil_id">COLOR ID:</label><br>
+  <input class="crudInput" type="text" id="color_id" name="color_id"><br>
+  <input class="crudButton" type="submit" value="DELETE COLOR">
+</form>
+
+<form action="backend/modify_color.php" method="POST">
+  <label for="fname">Color ID:</label><br>
+  <input class="crudInput" type="text" id="color_id" name="color_id"><br>
+  <label for="part">Brand:</label><br>
+  <input class="crudInput" type="text" id="brand" name="brand"><br>
+  <label for="type">Color name:</label><br>
+  <input class="crudInput" type="text" id="color_name" name="color_name"><br>
+  <label for="type">Color code:</label><br>
+  <input class="crudInput" type="text" id="color_code" name="color_code"><br>
+  <input class="crudButton" type="submit" value="MODIFY COLOR">
+</form>
+
+<h1>Car colors in the database:</h1>
+<table>
+<thead>
+<th>Color id</th>
+<th>Brand</th>
+<th>Basic color name</th>
+<th>Color code</th>
+
+
+</thead>
+<?php 
+$query = "SELECT * FROM brand_specific_color";    
+$params = [
+];
+require_once 'dbFunctions.php';
+$color = getList($query, $params);
+?>
+<?php foreach ($color as $c) : ?>
+<tr>
+<td><?=$c['color_id']?></td>
+<td><?=$c['brand']?></td>
+<td><?=$c['basic_color_name']?></td>
+<td><?=$c['color_code']?></td>
+</tr>
+<?php endforeach; ?>
+</table>
+</div>
