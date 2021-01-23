@@ -96,13 +96,66 @@ $query = "SELECT * FROM carparts";
 $params = [
 ];
 require_once 'dbFunctions.php';
-$cars = getList($query, $params);
+$parts = getList($query, $params);
 ?>
-<?php foreach ($cars as $c) : ?>
+<?php foreach ($parts as $c) : ?>
 <tr>
 <td><?=$c['id']?></td>
 <td><?=$c['part']?></td>
 <td><?=$c['for_type']?></td>
 </tr>
 <?php endforeach; ?>
+</table>
+</div>
+
+
+<div class="privateBox">
+<h1>CRUD for oil db:</h1>
+<form action="backend/add_oil.php" method="POST">
+  <label for="car_brand">Car brand:</label><br>
+  <input class="crudInput" type="text" id="car_brand" name="car_brand"><br>
+  <label for="type">Oil brand:</label><br>
+  <input class="crudInput" type="text" id="oil_brand" name="oil_brand"><br>
+  <input class="crudButton" type="submit" value="ADD OIL">
+</form>
+<form action="backend/delete_oil.php" method="POST">
+  <label for="oil_id">OIL ID:</label><br>
+  <input class="crudInput" type="text" id="oil_id" name="oil_id"><br>
+  <input class="crudButton" type="submit" value="DELETE OIL">
+</form>
+
+<form action="backend/modify_oil.php" method="POST">
+  <label for="fname">Oil ID:</label><br>
+  <input class="crudInput" type="text" id="oil_id" name="oil_id"><br>
+  <label for="part">Car brand:</label><br>
+  <input class="crudInput" type="text" id="car_brand" name="car_brand"><br>
+  <label for="type">Oil brand:</label><br>
+  <input class="crudInput" type="text" id="oil_brand" name="oil_brand"><br>
+  <input class="crudButton" type="submit" value="MODIFY OIL">
+</form>
+
+<h1>Oils in the database:</h1>
+<table>
+<thead>
+<th>Oil id</th>
+<th>Car brand</th>
+<th>Recommended oil for brand</th>
+
+
+</thead>
+<?php 
+$query = "SELECT * FROM oil";    
+$params = [
+];
+require_once 'dbFunctions.php';
+$oil = getList($query, $params);
+?>
+<?php foreach ($oil as $c) : ?>
+<tr>
+<td><?=$c['oil_id']?></td>
+<td><?=$c['car_brand']?></td>
+<td><?=$c['recommended_oil_brand']?></td>
+</tr>
+<?php endforeach; ?>
+</table>
 </div>
