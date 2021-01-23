@@ -18,6 +18,15 @@ if (empty($_GET['p']))
     <a href="index.php?p=private"><i class="fa fa-star"></i></i> Private</a>
 </div>
 <?php endif; ?>
+<?php if (IsUserLoggedIn()): ?>
+    <a href="index.php?p=upload">
+<div class="navbutton">
+        <div>
+            <i class="fa fa-upload"></i> Upload file
+        </div>
+</div>
+    </a>
+<?php endif; ?>
 
 <div class="navbutton">
 <?php if (!IsUserLoggedIn()): ?>
@@ -40,6 +49,7 @@ if (empty($_GET['p']))
 
 </div>
 <?php endif; ?>
+
 <?php if (IsUserLoggedIn()): ?>
 <div class="navbutton">
         <div><i class="fa fa-user-circle-o"></i> <?=$_SESSION['name']; ?></div>

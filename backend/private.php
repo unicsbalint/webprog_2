@@ -1,10 +1,62 @@
 <div class="privateBox">
-<h1>Only registred users can see this.</h1>
-That is really good, because:
-<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus dicta accusamus amet tenetur? Voluptas quos aut facilis fugit, soluta facere accusantium magni, doloremque ad sed doloribus laudantium asperiores officiis aspernatur.
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quasi dolore maxime excepturi, laboriosam, totam reiciendis inventore magnam iure et asperiores enim maiores esse expedita magni amet accusantium adipisci quas!
-    Illo illum laboriosam commodi dolore excepturi recusandae saepe officiis suscipit quae doloremque aliquid, dolorem unde ullam blanditiis aut neque necessitatibus inventore repellendus omnis. Odio in dolorum id, laboriosam quaerat corrupti.
-    Sequi porro aspernatur voluptatum quidem! Quia voluptate recusandae laborum. Pariatur officiis ipsum mollitia facilis aut in quo accusantium autem aspernatur expedita! Modi earum id excepturi explicabo tempora consectetur quo? Autem?
-    Culpa, nisi blanditiis. Quis deserunt dolorum doloremque. Est, quam itaque sit ut veniam maiores distinctio dolorum aperiam, ab esse quia adipisci modi nisi nam minima. Minus ut soluta eius dolores!
-</p>
+<h1>CRUD for car db:</h1>
+
+<form action="backend/add_car.php" method="POST">
+  <label for="car_brand">Brand:</label><br>
+  <input class="crudInput" type="text" id="car_brand" name="car_brand"><br>
+  <label for="car_type">Type:</label><br>
+  <input class="crudInput" type="text" id="car_type" name="car_type"><br>
+  <label for="car_hp">Horsepower:</label><br>
+  <input class="crudInput" type="text" id="car_hp" name="car_hp"><br>
+  <input class="crudButton" type="submit" value="ADD CAR">
+</form>
+<form action="backend/delete_car.php" method="POST">
+  <label for="car_id">CAR ID:</label><br>
+  <input class="crudInput" type="text" id="car_id" name="car_id"><br>
+  <input class="crudButton" type="submit" value="DELETE CAR">
+</form>
+
+<form action="backend/modify_car.php" method="POST">
+  <label for="fname">CAR ID:</label><br>
+  <input class="crudInput" type="text" id="car_id" name="car_id"><br>
+  <label for="car_brand">Brand:</label><br>
+  <input class="crudInput" type="text" id="car_brand" name="car_brand"><br>
+  <label for="car_type">Type:</label><br>
+  <input class="crudInput" type="text" id="car_type" name="car_type"><br>
+  <label for="car_hp">Horsepower:</label><br>
+  <input class="crudInput" type="text" id="car_hp" name="car_hp"><br>
+  <input class="crudButton" type="submit" value="MODIFY CAR">
+</form>
+
+<h1>Cars in the database:</h1>
+<table>
+<thead>
+<th>Car id</th>
+<th>Brand</th>
+<th>Type</th>
+<th>Horsepower</th>
+
+</thead>
+<?php 
+$query = "SELECT * FROM CAR";    
+$params = [
+];
+require_once 'dbFunctions.php';
+$cars = getList($query, $params);
+?>
+<?php foreach ($cars as $c) : ?>
+<tr>
+<td><?=$c['car_id']?></td>
+<td><?=$c['brand']?></td>
+<td><?=$c['type']?></td>
+<td><?=$c['horsepower']?></td>
+</tr>
+<?php endforeach; ?>
+
+</table>
+
+</div>
+
+<div class="privateBox">
+<h1>CRUD for parts db:</h1>
 </div>

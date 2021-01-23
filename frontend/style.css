@@ -156,3 +156,31 @@ nav {
     justify-content: center;
     margin-bottom: 2%;
 }
+
+.privatebox table, th, td {
+    border: 1px solid rgb(196, 196, 196);
+    color: white;
+  }
+
+.crudInput{
+padding: 10px;
+width: 65%;
+padding: 12px 20px;
+margin: 8px 0;
+box-sizing: border-box;
+}
+
+.crudInput:hover{
+    background-color: rgb(241, 241, 241);
+}
+.crudButton{
+    background-color: rgb(255, 145, 0);
+    padding: 10px;
+    width: 65%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    }
+.crudButton:hover{
+    background-color: rgb(196, 114, 8);
+}

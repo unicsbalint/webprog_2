@@ -11,6 +11,11 @@ switch ($_GET['p'])
     case 'login': require_once 'backend/user_management/login.php'; break;
     case 'register': require_once 'backend/user_management/register.php'; break; 
     case 'logout': IsUserLoggedIn() ? UserLogout() : header('Location: index.php'); break; 
+    case 'upload' : {
+        if(IsUserLoggedIn()){      
+        require_once 'backend/upload.php';
+    }
+    }   break; 
     case 'private': if(IsUserLoggedIn())
     {
         require_once 'backend/private.php';
