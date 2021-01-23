@@ -59,4 +59,50 @@ $cars = getList($query, $params);
 
 <div class="privateBox">
 <h1>CRUD for parts db:</h1>
+<form action="backend/add_part.php" method="POST">
+  <label for="part">Part:</label><br>
+  <input class="crudInput" type="text" id="part" name="part"><br>
+  <label for="type">For type:</label><br>
+  <input class="crudInput" type="text" id="type" name="type"><br>
+  <input class="crudButton" type="submit" value="ADD PART">
+</form>
+<form action="backend/delete_part.php" method="POST">
+  <label for="car_id">PART ID:</label><br>
+  <input class="crudInput" type="text" id="part_id" name="part_id"><br>
+  <input class="crudButton" type="submit" value="DELETE PART">
+</form>
+
+<form action="backend/modify_part.php" method="POST">
+  <label for="fname">PART ID:</label><br>
+  <input class="crudInput" type="text" id="part_id" name="part_id"><br>
+  <label for="part">Part:</label><br>
+  <input class="crudInput" type="text" id="part" name="part"><br>
+  <label for="type">For type::</label><br>
+  <input class="crudInput" type="text" id="type" name="type"><br>
+  <input class="crudButton" type="submit" value="MODIFY PART">
+</form>
+
+<h1>Parts in the database:</h1>
+<table>
+<thead>
+<th>Part id</th>
+<th>Part name</th>
+<th>For type</th>
+
+
+</thead>
+<?php 
+$query = "SELECT * FROM carparts";    
+$params = [
+];
+require_once 'dbFunctions.php';
+$cars = getList($query, $params);
+?>
+<?php foreach ($cars as $c) : ?>
+<tr>
+<td><?=$c['id']?></td>
+<td><?=$c['part']?></td>
+<td><?=$c['for_type']?></td>
+</tr>
+<?php endforeach; ?>
 </div>
